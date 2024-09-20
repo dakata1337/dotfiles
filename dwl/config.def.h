@@ -34,7 +34,7 @@ static const char *const autostart[] = {
 static const Rule rules[] = {
 	/* app_id             title       tags mask     isfloating   monitor */
 	/* examples: */
-	{ "corectrl",  NULL,       1 << 2,       0,           -1 }, /* Start on ONLY tag "3" */
+	{ "corectrl",  NULL,       1 << 8,       0,           -1 }, /* Start on ONLY tag "3" */
 };
 
 /* layout(s) */
