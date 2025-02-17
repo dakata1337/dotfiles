@@ -7,5 +7,6 @@ return {
         vim.keymap.set('n', '<leader>fw', builtin.live_grep, { desc = "Opens fuzzy word search (inside files)" })
         vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = "Opens fuzzy buffer search" })
         vim.keymap.set('n', '<leader>h', builtin.help_tags, { desc = "Opens fuzzy help search" })
+        vim.keymap.set('n', '<leader>fc', builtin.lsp_document_symbols, { desc = "Opens fuzzy help search" })
     end
 }
