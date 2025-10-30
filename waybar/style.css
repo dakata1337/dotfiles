@@ -6,7 +6,7 @@
 
 window#waybar {
     background-color: #222222;
-    border-bottom: 3px solid #444444;
+    border-bottom: 3px solid #333333;
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -87,7 +87,7 @@ button {
 #idle_inhibitor,
 #custom-kb-layout
 #power-profiles-daemon {
-    box-shadow: inset 0 -3px #444444;
+    box-shadow: inset 0 -3px #333333;
     padding: 0 10px;
     margin: 0;
     color: #ffffff;
@@ -150,7 +150,7 @@ label:focus {
 }
 
 #network {
-    background-color: #444444;
+    background-color: #333333;
     min-width: 150px;   /* adjust based on expected max text length */
 }
 
@@ -169,7 +169,7 @@ label:focus {
 }
 
 #tray {
-    background-color: #444444;
+    background-color: #333333;
 }
 
 #tray > .passive {
