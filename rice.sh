@@ -1,42 +1,30 @@
 #!/bin/bash
 set -e
-RED="\x1b[31;1m"
-GREEN="\x1b[32;1m"
-YELLOW="\x1b[33;1m"
-RST="\x1b[0m"
 CURSORS_PATH="/usr/share/icons/"
 
 function log() {
 	if [ $1 == "ERROR" ]; then
-		printf "[${RED}ERROR${RST}] $2\n"
+		printf "[\x1b[31;1mERROR\x1b[0m] $2\n"
 	elif [ $1 == "WARN" ]; then
-		printf "[${YELLOW}WARN${RST}] $2\n"
+		printf "[\x1b[33;1mWARN\x1b[0m] $2\n"
 	elif [ $1 == "INFO" ]; then
-		printf "[${GREEN}INFO${RST}] $2\n"
+		printf "[\x1b[32;1mINFO\x1b[0m] $2\n"
 	else
 		printf "$1\n"
 	fi
 }
 
-function is_installed() {
-	command -v $1 &> /dev/null
-}
-
 # bootstrap paru installer
-function bootstrap_paru() {
+if command -v "paru" &> /dev/null; then
+	log "INFO" "paru is installed... skip"
+else
+	log "INFO" "installing paru"
 	sudo pacman -S git
 	git clone https://aur.archlinux.org/paru-bin
 	cd paru-bin
 	makepkg -si
 	cd ..
 	rm -rf paru-bin
-}
-
-if is_installed "paru"; then
-	log "INFO" "paru is installed... skip"
-else
-	log "INFO" "installing paru"
-	bootstrap_paru
 fi
 
 INSTALL() {
