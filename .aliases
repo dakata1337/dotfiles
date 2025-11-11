@@ -1,6 +1,7 @@
 #!/bin/sh
 
 export EDITOR=nvim
+export XDG_PICTURES_DIR="/home/$(whoami)/Pictures"
 
 alias pacman='sudo pacman'
 alias gs='git status'
