@@ -39,18 +39,26 @@ else
 	bootstrap_paru
 fi
 
-INSTALL="paru -S --needed --noconfirm"
-
+INSTALL() {
+    if [ ! $2 ]; then
+        log "INFO" "installing: $1"
+    else
+        log "INFO" "$2"
+    fi
+    paru -S --needed --noconfirm $1 1> /dev/null
+}
 
 # Install window manager & surrounding software
-$INSTALL uwsm hyprland hyprshot waybar wofi foot fnott wl-clipboard wl-clip-persist xdg-desktop-portal-hyprland
+INSTALL "uwsm hyprland hyprshot waybar wofi foot fnott wl-clipboard wl-clip-persist xdg-desktop-portal-hyprland"
 
-# install general software
-$INSTALL librewolf-bin chromium gimp vlc mpv ffmpeg yt-dlp discord obs-studio ttf-hack-nerd breeze-icons jq
+# Install general software
+INSTALL "librewolf-bin chromium gimp vlc mpv ffmpeg yt-dlp discord obs-studio ttf-hack-nerd breeze-icons jq qbittorrent"
 
-# install programming software
-$INSTALL nvim go rustup unzip ripgrep fd npm luarocks wget github-cli
-rustup default stable
+# Install programming software
+INSTALL "nvim go rustup unzip ripgrep fd npm luarocks wget github-cli"
+
+log "INFO" "installing rustup toolchain"
+rustup default stable 1> /dev/null
 
 if gh auth status &>/dev/null; then
     log "INFO" "You are already logged into GitHub CLI."
