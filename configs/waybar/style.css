@@ -1,52 +1,18 @@
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
 }
-
 window#waybar {
     background-color: #222222;
     border-bottom: 3px solid #333333;
     color: #ffffff;
     transition-property: background-color;
-    transition-duration: .5s;
-}
-
-window#waybar.hidden {
-    opacity: 0.2;
-}
-
-/*
-window#waybar.empty {
-    background-color: transparent;
-}
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-*/
-
-window#waybar.termite {
-    background-color: #3F3F3F;
-}
-
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
 }
 
 button {
-    /* Use box-shadow instead of border so the text isn't offset */
     box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
     border: none;
     border-radius: 0;
 }
-
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-/* button:hover { */
-/*     background: inherit; */
-/*     box-shadow: inset 0 -3px #ffffff; */
-/* } */
 
 #workspaces button.active {
     box-shadow: inset 0 -3px #9c86ae;
@@ -57,14 +23,13 @@ button {
     background-color: transparent;
     color: #ffffff;
 }
-
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0);
+    text-shadow: inherit;
     box-shadow: inset 0 -3px #c0c0c0;
+    background: rgba(0, 0, 0, 0);
 }
 
 #workspaces button.focused {
-    /* background-color: #64727D; */
     box-shadow: inset 0 -3px #ffffff;
 }
 
@@ -73,86 +38,40 @@ button {
     box-shadow: inset 0 -3px #e57373;
 }
 
-#mode {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
-#clock,
-#network,
-#pulseaudio,
-#wireplumber,
-#tray,
-#mode,
-#idle_inhibitor,
-#custom-kb-layout
-#power-profiles-daemon {
-    box-shadow: inset 0 -3px #333333;
-    padding: 0 10px;
-    margin: 0;
-    color: #ffffff;
-}
-
-#window,
-#workspaces {
-    margin: 0 4px;
-}
-
-
-#custom-kb-layout {
-    padding: 0 5px;
-}
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
-}
-
-.modules-left > widget:first-child > #workspaces > *{
+/* Workspace spacing because of icon size */
+.modules-left > widget:first-child > #workspaces > * {
     padding-left: 5px;
     padding-right: 12px;
 }
 
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
-}
-
-label:focus {
-    background-color: #000000;
-}
-
-#backlight {
-    background-color: #90b1b1;
-}
-
 #network {
-    min-width: 150px;   /* adjust based on expected max text length */
+    min-width: 140px;   
 }
 
-#network.disconnected {
-    background-color: #f53c3c;
+.modules-right > * > * {
+    padding: 0 10px;
+}
+/* First element in modules-right */
+.modules-right > *:nth-child(1) > * {
+    box-shadow: inset 0 -3px #ff9aa2; /* pastel red/pink */
 }
 
-#pulseaudio {
-    color: #f0f0f0;
+/* Second element */
+.modules-right > *:nth-child(2) > * {
+    box-shadow: inset 0 -3px #ffc48c; /* muted pastel orange */
 }
 
-#pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
+/* Third element */
+.modules-right > *:nth-child(3) > * {
+    box-shadow: inset 0 -3px #fff5a1; /* muted pastel yellow */
 }
 
-#tray {
-    background-color: #333333;
+/* Fourth element */
+.modules-right > *:nth-child(4) > * {
+    box-shadow: inset 0 -3px #a8e6cf; /* pastel green */
 }
 
-#tray > .passive {
-    -gtk-icon-effect: dim;
+/* Fifth element */
+.modules-right > *:nth-child(5) > * {
+    box-shadow: inset 0 -3px #aec6cf; /* pastel blue */
 }
-
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
-}
-

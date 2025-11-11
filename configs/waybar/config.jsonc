@@ -13,9 +13,9 @@
         "hyprland/window"
     ],
     "modules-right": [
+        "network",
         "custom/kb-layout",
         "pulseaudio",
-        "network",
         "clock",
         "tray",
     ],
