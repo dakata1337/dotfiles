@@ -42,10 +42,10 @@ INSTALL="paru -S --needed --noconfirm"
 
 
 # Install window manager & surrounding software
-$INSTALL uwsm hyprland waybar wofi foot fnott wl-clipboard wl-clip-persist
+$INSTALL uwsm hyprland hyprshot waybar wofi foot fnott wl-clipboard wl-clip-persist
 
 # install general software
-$INSTALL librewolf-bin chromium gimp vlc mpv ffmpeg yt-dlp discord ttf-hack-nerd breeze-icons jq 
+$INSTALL librewolf-bin chromium gimp vlc mpv ffmpeg yt-dlp discord obs ttf-hack-nerd breeze-icons jq 
 
 # install programming software
 $INSTALL nvim go rustup unzip ripgrep fd npm luarocks wget github-cli
@@ -65,3 +65,4 @@ else
 fi
 
 cp -r ./configs/* ~/.config
+cp .aliases ~/

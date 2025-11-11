@@ -1,0 +1,12 @@
+#!/bin/sh
+
+export EDITOR=nvim
+
+alias pacman='sudo pacman'
+alias gs='git status'
+alias gd='git diff'
+alias gc='git commit'
+
+if uwsm check may-start && uwsm select; then
+  exec uwsm start default
+fi
