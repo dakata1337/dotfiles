@@ -43,7 +43,7 @@ INSTALL "uwsm hyprland hyprshot waybar wofi foot fnott wl-clipboard wl-clip-pers
 INSTALL "librewolf-bin chromium gimp vlc mpv ffmpeg yt-dlp discord obs-studio ttf-hack-nerd breeze-icons jq qbittorrent"
 
 # Install programming software
-INSTALL "nvim go rustup unzip ripgrep fd npm luarocks wget github-cli"
+INSTALL "nvim go rustup unzip ripgrep fd npm luarocks wget github-cli zsh"
 
 log "INFO" "installing rustup toolchain"
 rustup default stable 1> /dev/null
@@ -55,8 +55,9 @@ else
 fi
 
 if [ ! -d "/home/$(whoami)/.oh-my-zsh" ]; then
+    log "INFO" "Installing oh-my-zsh"
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    log "INFO" "source ~/.aliases" >> ~/.zshrc
+    echo "source ~/.aliases" >> ~/.zshrc
 else
     log "INFO" "oh-my-zsh is already installed"
 fi
