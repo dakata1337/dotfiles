@@ -43,7 +43,7 @@ INSTALL="paru -S --needed --noconfirm"
 
 
 # Install window manager & surrounding software
-$INSTALL uwsm hyprland hyprshot waybar wofi foot fnott wl-clipboard wl-clip-persist
+$INSTALL uwsm hyprland hyprshot waybar wofi foot fnott wl-clipboard wl-clip-persist xdg-desktop-portal-hyprland
 
 # install general software
 $INSTALL librewolf-bin chromium gimp vlc mpv ffmpeg yt-dlp discord obs-studio ttf-hack-nerd breeze-icons jq
