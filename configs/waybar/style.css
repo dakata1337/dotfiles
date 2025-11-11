@@ -108,37 +108,10 @@ button {
     margin-left: 0;
 }
 
-.modules-left > widget:first-child > #workspaces > *{
-    padding-left: 5px;
-    padding-right: 10px;
-}
 
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child > #workspaces {
     margin-right: 0;
-}
-
-#clock {
-    background-color: #333333;
-}
-
-#power-profiles-daemon {
-    padding-right: 15px;
-}
-
-#power-profiles-daemon.performance {
-    background-color: #f53c3c;
-    color: #ffffff;
-}
-
-#power-profiles-daemon.balanced {
-    background-color: #2980b9;
-    color: #ffffff;
-}
-
-#power-profiles-daemon.power-saver {
-    background-color: #2ecc71;
-    color: #000000;
 }
 
 label:focus {
@@ -150,7 +123,6 @@ label:focus {
 }
 
 #network {
-    background-color: #333333;
     min-width: 150px;   /* adjust based on expected max text length */
 }
 
@@ -159,7 +131,6 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #333333;
     color: #f0f0f0;
 }
 
@@ -181,23 +152,3 @@ label:focus {
     background-color: #eb4d4b;
 }
 
-#privacy {
-    padding: 0;
-}
-
-#privacy-item {
-    padding: 0 5px;
-    color: white;
-}
-
-#privacy-item.screenshare {
-    background-color: #cf5700;
-}
-
-#privacy-item.audio-in {
-    background-color: #1ca000;
-}
-
-#privacy-item.audio-out {
-    background-color: #0069d4;
-}

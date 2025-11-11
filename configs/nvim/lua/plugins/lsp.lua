@@ -1,6 +1,6 @@
 local lsp_server_hashmap = {
     ["rust"]     = "rust_analyzer",
-    ["ts"]       = "tsserver",
+    -- ["ts"]       = "tsserver",
     ["python"]   = "pyright",
     ["lua"]      = "lua_ls",
     ["c"]        = "clangd",
@@ -9,21 +9,14 @@ local lsp_server_hashmap = {
 local servers = {
     servers = {
         -- Overrides the default server
-        ["rust"] = {
-            config = function(default_on_attach)
-                local rt = require("rust-tools")
-                rt.setup({
-                    server = {
-                        on_attach = default_on_attach
-                    }
-                })
-                rt.inlay_hints.enable()
-            end
-        },
     }
 }
 
-local function default_on_attach (_, bufnr)
+local function default_on_attach (client, bufnr)
+    if client.server_capabilities.inlayHintProvider then
+        vim.lsp.inlay_hint.enable(true)
+    end
+
     local bufopts = function(desc)
         return { noremap = true, silent = true, buffer = bufnr, desc = desc }
     end
@@ -101,7 +94,7 @@ local function setup_cmp()
 end
 
 return {
-    { "simrat39/rust-tools.nvim",          event = "VeryLazy" },
+    { "mrcjkb/rustaceanvim",          event = "VeryLazy" },
 
     { "williamboman/mason.nvim",           event = "VeryLazy",
       config = function()
@@ -116,13 +109,12 @@ return {
     { "neovim/nvim-lspconfig",             event = "VeryLazy",
       config = function()
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
-        local lspconfig = require("lspconfig")
 
         for name, server_name in pairs(lsp_server_hashmap) do
             if servers.servers[name] ~= nil then
                 servers.servers[name].config(default_on_attach)
             else
-                lspconfig[server_name].setup({
+                vim.lsp.config(server_name, {
                     flags = default_flags,
                     on_attach = default_on_attach,
                     capabilities = capabilities,
