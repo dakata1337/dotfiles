@@ -48,8 +48,14 @@ $INSTALL uwsm hyprland waybar wofi foot fnott wl-clipboard wl-clip-persist
 $INSTALL librewolf-bin chromium gimp vlc mpv ffmpeg yt-dlp discord ttf-hack-nerd breeze-icons jq 
 
 # install programming software
-$INSTALL nvim go rustup unzip ripgrep fd npm luarocks wget
+$INSTALL nvim go rustup unzip ripgrep fd npm luarocks wget github-cli
 rustup default stable
+
+if gh auth status &>/dev/null; then
+    log "INFO" "You are already logged into GitHub CLI."
+else
+    gh auth login
+fi
 
 if [ ! -d "/home/$(whoami)/.oh-my-zsh" ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
