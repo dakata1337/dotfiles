@@ -20,7 +20,7 @@
         "tray",
     ],
     "custom/kb-layout": {
-        "exec": "hyprctl devices -j | jq -r '.keyboards[5] | .active_keymap'",
+        "exec": "hyprctl devices -j | jq -r '.keyboards[] | .active_keymap' | sort | head -n 1",
         "interval": 1,
         "format": "{}",
         "tooltip": false,
