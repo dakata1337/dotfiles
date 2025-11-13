@@ -10,7 +10,7 @@ bootstrap_paru
 INSTALL "uwsm hyprland hyprshot waybar wofi foot fnott wl-clipboard wl-clip-persist xdg-desktop-portal-hyprland xdg-user-dirs"
 
 # Install general software
-INSTALL "librewolf-bin chromium gimp vlc mpv ffmpeg yt-dlp discord obs-studio ttf-hack-nerd breeze-icons jq qbittorrent"
+INSTALL "librewolf-bin chromium gimp vlc mpv ffmpeg yt-dlp discord obs-studio ttf-hack-nerd breeze-icons jq qbittorrent supersonic-desktop-bin"
 
 # Install programming software
 INSTALL "nvim go rustup unzip ripgrep fd npm luarocks wget github-cli zsh"
