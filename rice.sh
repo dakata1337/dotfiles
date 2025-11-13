@@ -2,42 +2,12 @@
 set -e
 CURSORS_PATH="/usr/share/icons/"
 
-function log() {
-	if [ $1 == "ERROR" ]; then
-		printf "[\x1b[31;1mERROR\x1b[0m] $2\n"
-	elif [ $1 == "WARN" ]; then
-		printf "[\x1b[33;1mWARN\x1b[0m] $2\n"
-	elif [ $1 == "INFO" ]; then
-		printf "[\x1b[32;1mINFO\x1b[0m] $2\n"
-	else
-		printf "$1\n"
-	fi
-}
-
-# bootstrap paru installer
-if command -v "paru" &> /dev/null; then
-	log "INFO" "paru is installed... skip"
-else
-	log "INFO" "installing paru"
-	sudo pacman -S git
-	git clone https://aur.archlinux.org/paru-bin
-	cd paru-bin
-	makepkg -si
-	cd ..
-	rm -rf paru-bin
-fi
-
-INSTALL() {
-    if [ ! $2 ]; then
-        log "INFO" "installing: $1"
-    else
-        log "INFO" "$2"
-    fi
-    paru -S --needed --noconfirm $1 1> /dev/null
-}
+# Load helper functions & bootstrap package manager
+source "./helpers.sh"
+bootstrap_paru
 
 # Install window manager & surrounding software
-INSTALL "uwsm hyprland hyprshot waybar wofi foot fnott wl-clipboard wl-clip-persist xdg-desktop-portal-hyprland"
+INSTALL "uwsm hyprland hyprshot waybar wofi foot fnott wl-clipboard wl-clip-persist xdg-desktop-portal-hyprland xdg-user-dirs"
 
 # Install general software
 INSTALL "librewolf-bin chromium gimp vlc mpv ffmpeg yt-dlp discord obs-studio ttf-hack-nerd breeze-icons jq qbittorrent"
