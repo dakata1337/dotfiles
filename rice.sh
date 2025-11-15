@@ -1,9 +1,9 @@
-#!/bin/bash
-set -e
+# Load helper functions and env
+source "./helpers.sh"
+
 CURSORS_PATH="/usr/share/icons/"
 
-# Load helper functions & bootstrap package manager
-source "./helpers.sh"
+# bootstrap package manager
 bootstrap_paru
 
 # Install window manager & surrounding software

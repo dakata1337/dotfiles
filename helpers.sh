@@ -1,8 +1,12 @@
-#!/bin/bash
+#!/usr/bin/env bash
 R='\x1b[31;1m'
 G='\x1b[32;1m'
 Y='\x1b[33;1m'
+COM='\x1b[4;3m'
 RST="\x1b[0m"
+
+set -eE
+trap 'log "ERROR" "Error in $BASH_SOURCE at line ${LINENO} (c=$?): ${BASH_COMMAND}"' ERR
 
 function log() {
 	if [ $1 == "ERROR" ]; then

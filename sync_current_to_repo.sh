@@ -1,6 +1,3 @@
-#!/bin/bash
-set -euo pipefail
-
 source "./helpers.sh"
 
 DOTFILES_DIR="$(pwd)/configs"
