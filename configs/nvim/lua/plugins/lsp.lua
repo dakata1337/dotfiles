@@ -5,6 +5,7 @@ local lsp_server_hashmap = {
     ["lua"]      = "lua_ls",
     ["c"]        = "clangd",
     ["go"]       = "gopls",
+    ["csharp"]   = "csharp_ls",
 }
 local servers = {
     servers = {
