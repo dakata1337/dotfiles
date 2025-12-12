@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "format_on_save": "off",
   "vertical_scroll_margin": 8.0,
   "horizontal_scroll_margin": 5.0,
   "scroll_beyond_last_line": "vertical_scroll_margin",
@@ -30,19 +31,10 @@
   "disable_ai": true,
   "project_panel": {
     "button": true,
-    "indent_guides": {
-      "show": "always"
-    },
-    "git_status": true,
-    "hide_gitignore": false,
-    "dock": "left"
+    "git_status": true
   },
   "active_pane_modifiers": {
-    "inactive_opacity": 1.0
-  },
-  "window_decorations": "client",
-  "tabs": {
-    "git_status": false
+    "inactive_opacity": 0.8
   },
   "tab_bar": {
     "show": false
