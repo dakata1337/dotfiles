@@ -9,7 +9,8 @@
   {
     "context": "Editor && showing_completions",
     "bindings": {
-      "shift-tab": "editor::ContextMenuNext"
+      "tab": "editor::ContextMenuNext",
+      "enter": "editor::ConfirmCompletionInsert"
     }
   },
 

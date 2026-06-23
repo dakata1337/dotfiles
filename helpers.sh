@@ -32,6 +32,7 @@ function bootstrap_paru() {
         cd ..
         rm -rf paru-bin
     fi
+    paru -Syu --noconfirm
 }
 
 function INSTALL() {

@@ -7,10 +7,10 @@ CURSORS_PATH="/usr/share/icons/"
 bootstrap_paru
 
 # Install window manager & surrounding software
-INSTALL "uwsm hyprland hyprshot waybar wofi foot fnott wl-clipboard wl-clip-persist xdg-desktop-portal-hyprland xdg-user-dirs"
+INSTALL "uwsm hyprland hyprshot waybar wofi foot fnott wl-clipboard wl-clip-persist xdg-desktop-portal-hyprland xdg-user-dirs xdg-desktop-portal-gtk gsettings-desktop-schemas"
 
 # Install general software
-INSTALL "librewolf-bin chromium gimp vlc mpv ffmpeg yt-dlp discord obs-studio ttf-hack-nerd breeze-icons jq qbittorrent supersonic-desktop-bin"
+INSTALL "zen-browser-bin chromium gimp vlc mpv ffmpeg yt-dlp discord obs-studio ttf-hack-nerd breeze-icons jq qbittorrent supersonic-desktop-bin nautilus"
 
 # Install programming software
 INSTALL "nvim go rustup unzip ripgrep fd npm luarocks wget github-cli zsh"
