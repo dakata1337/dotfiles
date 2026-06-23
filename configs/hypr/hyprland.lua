@@ -49,7 +49,7 @@ local scope = "mpv av://v4l2:/dev/video0 --profile=low-latency --untimed"
 --
 hl.on("hyprland.start", function () 
   hl.exec_cmd("foot --server")
-  hl.exec_cmd("waybar")
+  hl.exec_cmd("ashell")
   hl.exec_cmd("discord")
   hl.exec_cmd("hyprctl setcursor \"Breeze_Light\" 24")
 end)
@@ -109,7 +109,7 @@ hl.config({
         -- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
         allow_tearing = false,
 
-        layout = "dwindle",
+        layout = "master",
     },
 
     decoration = {
@@ -186,22 +186,13 @@ hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "
 --     rounding    = 0,
 -- })
 
--- See https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/ for more
 hl.config({
     dwindle = {
         preserve_split = true, -- You probably want this
     },
-})
-
--- See https://wiki.hypr.land/Configuring/Layouts/Master-Layout/ for more
-hl.config({
     master = {
-        new_status = "master",
+        new_status = "slave",
     },
-})
-
--- See https://wiki.hypr.land/Configuring/Layouts/Scrolling-Layout/ for more
-hl.config({
     scrolling = {
         fullscreen_on_one_column = true,
     },
@@ -282,7 +273,7 @@ hl.bind("SUPER + E", hl.dsp.exec_cmd(fileManager))
 hl.bind("SUPER + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("SUPER + SHIFT + F", hl.dsp.window.fullscreen())
 hl.bind("SUPER + D", hl.dsp.exec_cmd(menu))
-hl.bind("SUPER + B", hl.dsp.exec_cmd("pkill waybar; waybar"))
+hl.bind("SUPER + B", hl.dsp.exec_cmd("pkill ashell; ashell"))
 hl.bind("SUPER + C", hl.dsp.window.center())
 hl.bind("SUPER + P", hl.dsp.window.pin())
 
@@ -293,7 +284,7 @@ hl.bind("SUPER + K", hl.dsp.focus({ direction = "up" }))
 hl.bind("SUPER + J", hl.dsp.focus({ direction = "down" }))
 
 -- Layout controls
-hl.bind("SUPER + SHIFT + Return", hl.dsp.layout("swapwithmaster master"))
+hl.bind("SUPER + SHIFT + Return", hl.dsp.layout("swapwithmaster"))
 hl.bind("SUPER + CTRL + Return", hl.dsp.layout("focusmaster master"))
 
 -- Workspace switching
@@ -313,12 +304,12 @@ hl.bind("SUPER + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Audio / brightness
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { locked = true, repeating = true })
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true, repeating = true })
-hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("ashell msg volume-up"), { locked = true, repeating = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("ashell msg volume-down"), { locked = true, repeating = true })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("ashell msg volume-toggle-mute"), { locked = true, repeating = true })
+hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("ashell msg microphone-toggle-mute"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("ashell msg brightness-up"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("ashell msg brightness-down"), { locked = true, repeating = true })
 
 -- Media keys
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
@@ -352,6 +343,7 @@ hl.window_rule({
     workspace = "9",
     float = true,
     center = true,
+    size = "1440 850",
 })
 
 -- Python env window
