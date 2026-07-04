@@ -52,7 +52,14 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("ashell")
   hl.exec_cmd("discord")
   hl.exec_cmd("hyprctl setcursor \"Breeze_Light\" 24")
+  hl.exec_cmd("hyprpaper")
+  hl.exec_cmd("gsettings set org.gnome.desktop.interface gtk-theme \"Adwaita-dark\"")
+  hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme \"prefer-dark\"")
+  hl.exec_cmd("xdg-mime default org.gnome.Nautilus.desktop inode/directory")
+  hl.exec_cmd("xdg-mime default org.gnome.Nautilus.desktop application/x-gnome-saved-search")
+  hl.exec_cmd("xdg-mime default org.gnome.Nautilus.desktop x-scheme-handler/file")
 end)
+
 
 
 -------------------------------
@@ -65,7 +72,7 @@ hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_THEME", "Breeze_Light")
 hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("MOZ_ENABLE_WAYLAND", "1")
-
+hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 
 -----------------------
 ----- PERMISSIONS -----
