@@ -4,8 +4,8 @@ position = "Top"
 region = "bg-BG"
 
 [modules]
-left = [ [ "appLauncher","Workspaces" ] ]
-center = [ "WindowTitle" ]
+left = [ [ "appLauncher", "WindowTitle" ] ]
+center = [ "Workspaces" ]
 right = [ "MediaPlayer", [ "Tray", "Tempo", "Privacy", "Settings", "Notifications" ] ] # Available: "SystemInfo"
 
 [workspaces]
@@ -82,13 +82,13 @@ enabled = true   # (default)
 style = "Islands"  # (default), "Solid", or "Gradient"
 font_name = "Hack Nerd Font"           # (default: None) custom font family
 # scale_factor = 1.00           # (default) range: 0.0 < x <= 2.0
-opacity = 0.5                # (default) range: 0.0 to 1.0
+opacity = 0.9                # (default) range: 0.0 to 1.0
 primary_color = "#7aa2f7"
 success_color = "#9ece6a"
 warning_color = "#e0af68"
 danger_color = "#ff0000"
 text_color = "#a9b1d6"
-workspace_colors = [ "#24273a", "#9ece6a" ]
+workspace_colors = [ "#383d5b", "#9ece6a" ]
 
 [appearance.menu]
 opacity = 0.95   # (default) menu background opacity

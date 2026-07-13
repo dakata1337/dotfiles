@@ -32,10 +32,10 @@ local terminal    = "footclient"
 local fileManager = "nautilus"
 local menu        = "wofi --show drun"
 
-local browser = "zen-browser"
-local discord = "discord"
-local music = "supersonic-desktop"
-local scope = "mpv av://v4l2:/dev/video0 --profile=low-latency --untimed"
+local browser     = "zen-browser"
+local discord     = "discord"
+local music       = "supersonic-desktop"
+local scope       = "mpv av://v4l2:/dev/video0 --profile=low-latency --untimed"
 
 
 -------------------
@@ -47,17 +47,17 @@ local scope = "mpv av://v4l2:/dev/video0 --profile=low-latency --untimed"
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)
 -- Or execute your favorite apps at launch like this:
 --
-hl.on("hyprland.start", function () 
-  hl.exec_cmd("foot --server")
-  hl.exec_cmd("ashell")
-  hl.exec_cmd("discord")
-  hl.exec_cmd("hyprctl setcursor \"Breeze_Light\" 24")
-  hl.exec_cmd("hyprpaper")
-  hl.exec_cmd("gsettings set org.gnome.desktop.interface gtk-theme \"Adwaita-dark\"")
-  hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme \"prefer-dark\"")
-  hl.exec_cmd("xdg-mime default org.gnome.Nautilus.desktop inode/directory")
-  hl.exec_cmd("xdg-mime default org.gnome.Nautilus.desktop application/x-gnome-saved-search")
-  hl.exec_cmd("xdg-mime default org.gnome.Nautilus.desktop x-scheme-handler/file")
+hl.on("hyprland.start", function()
+    hl.exec_cmd("foot --server")
+    hl.exec_cmd("ashell")
+    hl.exec_cmd("discord")
+    hl.exec_cmd("hyprctl setcursor \"Breeze_Light\" 24")
+    hl.exec_cmd("hyprpaper")
+    hl.exec_cmd("gsettings set org.gnome.desktop.interface gtk-theme \"Adwaita-dark\"")
+    hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme \"prefer-dark\"")
+    hl.exec_cmd("xdg-mime default org.gnome.Nautilus.desktop inode/directory")
+    hl.exec_cmd("xdg-mime default org.gnome.Nautilus.desktop application/x-gnome-saved-search")
+    hl.exec_cmd("xdg-mime default org.gnome.Nautilus.desktop x-scheme-handler/file")
 end)
 
 
@@ -100,13 +100,13 @@ hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
     general = {
-        gaps_in  = 5,
-        gaps_out = 20,
+        gaps_in          = 5,
+        gaps_out         = 20,
 
-        border_size = 2,
+        border_size      = 2,
 
-        col = {
-            active_border   = { colors = {"rgba(6e708aee)", "rgba(9c86aeee)"}, angle = 45 },
+        col              = {
+            active_border   = { colors = { "rgba(6e708aee)", "rgba(9c86aeee)" }, angle = 45 },
             inactive_border = "rgba(444444aa)",
         },
 
@@ -114,31 +114,31 @@ hl.config({
         resize_on_border = false,
 
         -- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
-        allow_tearing = false,
+        allow_tearing    = false,
 
-        layout = "master",
+        layout           = "master",
     },
 
     decoration = {
-        rounding       = 5,
-        rounding_power = 2,
+        rounding         = 5,
+        rounding_power   = 2,
 
         -- Change transparency of focused and unfocused windows
         active_opacity   = 1.0,
         inactive_opacity = 1.0,
 
-        shadow = {
+        shadow           = {
             enabled      = true,
             range        = 4,
             render_power = 3,
             color        = 0xee1a1a1a,
         },
 
-        blur = {
-            enabled   = true,
-            size      = 3,
-            passes    = 1,
-            vibrancy  = 0.1696,
+        blur             = {
+            enabled  = true,
+            size     = 3,
+            passes   = 1,
+            vibrancy = 0.1696,
         },
     },
 
@@ -148,32 +148,32 @@ hl.config({
 })
 
 -- Default curves and animations, see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
-hl.curve("easeOutQuint",   { type = "bezier", points = { {0.23, 1},    {0.32, 1}    } })
-hl.curve("easeInOutCubic", { type = "bezier", points = { {0.65, 0.05}, {0.36, 1}    } })
-hl.curve("linear",         { type = "bezier", points = { {0, 0},       {1, 1}       } })
-hl.curve("almostLinear",   { type = "bezier", points = { {0.5, 0.5},   {0.75, 1}    } })
-hl.curve("quick",          { type = "bezier", points = { {0.15, 0},    {0.1, 1}     } })
+hl.curve("easeOutQuint", { type = "bezier", points = { { 0.23, 1 }, { 0.32, 1 } } })
+hl.curve("easeInOutCubic", { type = "bezier", points = { { 0.65, 0.05 }, { 0.36, 1 } } })
+hl.curve("linear", { type = "bezier", points = { { 0, 0 }, { 1, 1 } } })
+hl.curve("almostLinear", { type = "bezier", points = { { 0.5, 0.5 }, { 0.75, 1 } } })
+hl.curve("quick", { type = "bezier", points = { { 0.15, 0 }, { 0.1, 1 } } })
 
 -- Default springs
-hl.curve("easy",           { type = "spring", mass = 1, stiffness = 71.2633, dampening = 15.8273644 })
+hl.curve("easy", { type = "spring", mass = 1, stiffness = 71.2633, dampening = 15.8273644 })
 
-hl.animation({ leaf = "global",        enabled = true,  speed = 10,   bezier = "default" })
-hl.animation({ leaf = "border",        enabled = true,  speed = 5.39, bezier = "easeOutQuint" })
-hl.animation({ leaf = "windows",       enabled = true,  speed = 4.79, spring = "easy" })
-hl.animation({ leaf = "windowsIn",     enabled = true,  speed = 4.1,  spring = "easy",         style = "popin 87%" })
-hl.animation({ leaf = "windowsOut",    enabled = true,  speed = 1.49, bezier = "linear",       style = "popin 87%" })
-hl.animation({ leaf = "fadeIn",        enabled = true,  speed = 1.73, bezier = "almostLinear" })
-hl.animation({ leaf = "fadeOut",       enabled = true,  speed = 1.46, bezier = "almostLinear" })
-hl.animation({ leaf = "fade",          enabled = true,  speed = 3.03, bezier = "quick" })
-hl.animation({ leaf = "layers",        enabled = true,  speed = 3.81, bezier = "easeOutQuint" })
-hl.animation({ leaf = "layersIn",      enabled = true,  speed = 4,    bezier = "easeOutQuint", style = "fade" })
-hl.animation({ leaf = "layersOut",     enabled = true,  speed = 1.5,  bezier = "linear",       style = "fade" })
-hl.animation({ leaf = "fadeLayersIn",  enabled = true,  speed = 1.79, bezier = "almostLinear" })
-hl.animation({ leaf = "fadeLayersOut", enabled = true,  speed = 1.39, bezier = "almostLinear" })
-hl.animation({ leaf = "workspaces",    enabled = true,  speed = 1.94, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 1.21, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "quick" })
+hl.animation({ leaf = "global", enabled = true, speed = 10, bezier = "default" })
+hl.animation({ leaf = "border", enabled = true, speed = 5.39, bezier = "easeOutQuint" })
+hl.animation({ leaf = "windows", enabled = true, speed = 4.79, spring = "easy" })
+hl.animation({ leaf = "windowsIn", enabled = true, speed = 4.1, spring = "easy", style = "popin 87%" })
+hl.animation({ leaf = "windowsOut", enabled = true, speed = 1.49, bezier = "linear", style = "popin 87%" })
+hl.animation({ leaf = "fadeIn", enabled = true, speed = 1.73, bezier = "almostLinear" })
+hl.animation({ leaf = "fadeOut", enabled = true, speed = 1.46, bezier = "almostLinear" })
+hl.animation({ leaf = "fade", enabled = true, speed = 3.03, bezier = "quick" })
+hl.animation({ leaf = "layers", enabled = true, speed = 3.81, bezier = "easeOutQuint" })
+hl.animation({ leaf = "layersIn", enabled = true, speed = 4, bezier = "easeOutQuint", style = "fade" })
+hl.animation({ leaf = "layersOut", enabled = true, speed = 1.5, bezier = "linear", style = "fade" })
+hl.animation({ leaf = "fadeLayersIn", enabled = true, speed = 1.79, bezier = "almostLinear" })
+hl.animation({ leaf = "fadeLayersOut", enabled = true, speed = 1.39, bezier = "almostLinear" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
+hl.animation({ leaf = "workspacesIn", enabled = true, speed = 1.21, bezier = "almostLinear", style = "fade" })
+hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
+hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" })
 
 -- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 -- "Smart gaps" / "No gaps when only"
@@ -223,17 +223,17 @@ hl.config({
 
 hl.config({
     input = {
-        kb_layout  = "us,bg",
-        kb_variant = "",
-        kb_model   = "",
-        kb_options = "grp:alt_shift_toggle",
-        kb_rules   = "",
+        kb_layout    = "us,bg",
+        kb_variant   = "",
+        kb_model     = "",
+        kb_options   = "grp:alt_shift_toggle",
+        kb_rules     = "",
 
         follow_mouse = 1,
 
-        sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
+        sensitivity  = 0, -- -1.0 - 1.0, 0 means no modification.
 
-        touchpad = {
+        touchpad     = {
             natural_scroll = false,
         },
     },
@@ -299,7 +299,7 @@ hl.bind("SUPER + TAB", hl.dsp.focus({ workspace = "previous" }))
 
 for i = 1, 9 do
     hl.bind("SUPER + " .. i, hl.dsp.focus({ workspace = i }))
-    hl.bind("SUPER + SHIFT + " .. i, hl.dsp.window.move({ workspace = i, follow = false}))
+    hl.bind("SUPER + SHIFT + " .. i, hl.dsp.window.move({ workspace = i, follow = false }))
 end
 
 -- Special workspace (scratchpad)
@@ -307,7 +307,7 @@ hl.bind("SUPER + S", hl.dsp.workspace.toggle_special("magic"))
 hl.bind("SUPER + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Mouse window move/resize
-hl.bind("SUPER + mouse:272", hl.dsp.window.drag(),   { mouse = true })
+hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Audio / brightness
@@ -327,6 +327,16 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 --------------------------
 ---- WINDOW RULES -------
 --------------------------
+
+function float_center_rule(name, match)
+    hl.window_rule({
+        name = name,
+        match = match,
+        float = true,
+        center = true,
+        size = "1440 850",
+    })
+end
 
 -- Discord → workspace 4 + monitor 1
 hl.window_rule({
@@ -362,6 +372,12 @@ hl.window_rule({
     center = true,
     size = "800 500",
 })
+
+-- KiCad Rules
+local kicad_floting_windows = { ".*Footprint Chooser.*", ".*3D Viewer.*"}
+for i, value in ipairs(kicad_floting_windows) do
+    float_center_rule("kicad-floating" .. i, { class = "kicad", title = value})
+end
 
 -- Suppress maximize requests
 hl.window_rule({
