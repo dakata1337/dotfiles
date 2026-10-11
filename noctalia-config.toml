@@ -1,0 +1,173 @@
+[bar.default]
+center = [ "media" ]
+end = [
+    "screenshot",
+    "tray",
+    "notifications",
+    "clipboard",
+    "network",
+    "bluetooth",
+    "volume",
+    "brightness",
+    "battery",
+    "control-center",
+    "spacer_2",
+    "clock",
+    "spacer_3",
+    "session"
+]
+
+[control_center]
+hidden_tabs = [ "monitor", "system", "power", "network", "calendar", "screen-time" ]
+
+[idle]
+pre_action_fade_seconds = 0
+
+[location]
+address = "Ruse, Bulgaria"
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@DP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
+    output = "DP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[shell]
+clipboard_enabled = false
+font_family = "BlexMono Nerd Font Mono"
+
+    [shell.screenshot]
+    directory = "/home/daniel/Pictures/Screenshots"
+
+    [[shell.session.actions]]
+    action = "lock"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "1"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "logout"
+    countdown_seconds = 0.0
+    enabled = false
+    shortcut = "2"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "lock_and_suspend"
+    countdown_seconds = 0.0
+    enabled = false
+    shortcut = "3"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "reboot"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "4"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "shutdown"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "5"
+    variant = "destructive"
+
+[system.monitor]
+enabled = false
+
+[theme]
+builtin = "Ayu"
+community_palette = "Kemuri"
+source = "wallpaper"
+wallpaper_scheme = "m3-tonal-spot"
+
+    [theme.templates]
+    builtin_ids = [ "gtk3", "gtk4", "hyprland", "kcolorscheme", "qt" ]
+    community_ids = [ "zen-browser", "gimp", "zed", "hyprtoolkit" ]
+
+[wallpaper]
+directory = "/home/daniel/Pictures/Wallpapers"
+
+    [wallpaper.default]
+    path = "/home/daniel/Pictures/Wallpapers/buzlodja.jpg"
+
+    [wallpaper.last]
+    path = "/home/daniel/Pictures/Wallpapers/buzlodja.jpg"
+
+    [wallpaper.monitors.DP-1]
+    path = "/home/daniel/Pictures/Wallpapers/buzlodja.jpg"
+
+[widget.battery]
+enabled = false
+
+[widget.bluetooth]
+enabled = false
+
+[widget.brightness]
+enabled = false
+
+[widget.clipboard]
+enabled = false
+
+[widget.control-center]
+enabled = false
+
+[widget.media]
+art_size = 32
+hide_artist = true
+max_length = 450
+title_scroll = "on_hover"
+
+    [widget.media.actions]
+    back = "none"
+    forward = "none"
+    middle = "none"
+    scroll_down = "none"
+    scroll_left = "none"
+    scroll_right = "none"
+    scroll_up = "none"
+
+[widget.network]
+enabled = false
+
+[widget.spacer_2]
+type = "spacer"
+
+[widget.spacer_3]
+type = "spacer"
+
+[widget.wallpaper]
+enabled = false
