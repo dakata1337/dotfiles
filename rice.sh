@@ -23,7 +23,7 @@ log "INFO" "==========[installing desktop environment]=========="
 pkg-add "linux-firmware-amd linux-firmware-amdgpu linux-firmware-mediatek"
 
 # Install window manager & surrounding software
-pkg-add "uwsm hyprland foot wl-clipboard wl-clip-persist xdg-desktop-portal-hyprland xdg-user-dirs xdg-desktop-portal-gtk gsettings-desktop-schemas noctalia"
+pkg-add "hyprland foot wl-clipboard wl-clip-persist xdg-desktop-portal-hyprland xdg-user-dirs xdg-desktop-portal-gtk gsettings-desktop-schemas noctalia"
 
 # Install general software
 pkg-add "zen-browser-bin gimp vlc mpv ffmpeg yt-dlp obs-studio jq qbittorrent supersonic-desktop-bin btop pipewire-openrc pipewire-alsa pipewire-jack pipewire-pulse-openrc wireplumber-openrc xdg-desktop-portal-wlr"

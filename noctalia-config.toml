@@ -1,6 +1,8 @@
 [bar.default]
 center = [ "media" ]
 end = [
+    "weather",
+    "spacer_2",
     "screenshot",
     "tray",
     "notifications",
@@ -10,10 +12,10 @@ end = [
     "volume",
     "brightness",
     "battery",
-    "control-center",
     "spacer_2",
     "clock",
-    "spacer_3",
+    "spacer_2",
+    "control-center",
     "session"
 ]
 
@@ -111,6 +113,7 @@ enabled = false
 [theme]
 builtin = "Ayu"
 community_palette = "Kemuri"
+mode = "dark"
 source = "wallpaper"
 wallpaper_scheme = "m3-tonal-spot"
 
@@ -170,4 +173,9 @@ type = "spacer"
 type = "spacer"
 
 [widget.wallpaper]
-enabled = false
+enabled = true
+
+[widget.workspaces]
+max_label_chars = 5
+scale = 1.1500000000000001
+style = "focus_hint"
