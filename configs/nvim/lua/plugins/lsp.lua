@@ -7,6 +7,14 @@ local servers = {
 		on_init = function(client)
 			client.server_capabilities.documentFormattingProvider = false
 
+			local config_dir = vim.fn.stdpath("config")
+			local bufnr = vim.api.nvim_get_current_buf()
+			local bufname = vim.api.nvim_buf_get_name(bufnr)
+			local buf_dir = vim.fs.dirname(bufname)
+			if not buf_dir or not vim.fs.relpath(config_dir, buf_dir) then
+				return
+			end
+
 			if client.workspace_folders then
 				local path = client.workspace_folders[1].name
 				if
