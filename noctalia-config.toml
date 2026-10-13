@@ -1,5 +1,5 @@
 [bar.default]
-center = [ "media" ]
+center = [ "workspaces" ]
 end = [
     "weather",
     "spacer_2",
@@ -18,9 +18,69 @@ end = [
     "control-center",
     "session"
 ]
+start = [ "launcher", "wallpaper", "media" ]
+
+[calendar.account.personal_google]
+name = "a"
 
 [control_center]
 hidden_tabs = [ "monitor", "system", "power", "network", "calendar", "screen-time" ]
+
+[desktop_widgets]
+schema_version = 2
+widget_order = [ "desktop-widget-0000000000000001", "desktop-widget-0000000000000003", "desktop-widget-0000000000000006" ]
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget.desktop-widget-0000000000000001]
+    box_height = 144.0
+    box_width = 288.0
+    cx = 960.0
+    cy = 492.0
+    output = "DP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "clock"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000001.settings]
+        background = false
+        clock_style = "digital"
+        format = "{:%H:%M}"
+
+    [desktop_widgets.widget.desktop-widget-0000000000000003]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 960.0
+    cy = 652.0
+    output = "DP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "weather"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000003.settings]
+        background = false
+        font_family = ""
+
+    [desktop_widgets.widget.desktop-widget-0000000000000006]
+    box_height = 64.0
+    box_width = 480.0
+    cx = 960.0
+    cy = 572.0
+    output = "DP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "clock"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000006.settings]
+        background = false
+        format = "{:%b %d %Y - %A}"
+        shadow = true
 
 [idle]
 pre_action_fade_seconds = 0
@@ -31,7 +91,7 @@ address = "Ruse, Bulgaria"
 [lockscreen_widgets]
 enabled = false
 schema_version = 2
-widget_order = [ "lockscreen-login-box@DP-1" ]
+widget_order = [ "lockscreen-login-box@FALLBACK", "lockscreen-login-box@DP-1" ]
 
     [lockscreen_widgets.grid]
     cell_size = 16
@@ -64,6 +124,36 @@ widget_order = [ "lockscreen-login-box@DP-1" ]
         show_session_buttons = true
         show_unlock_hint = true
         show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@FALLBACK"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
+    output = "FALLBACK"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@FALLBACK".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[osd.kinds]
+media = false
 
 [shell]
 clipboard_enabled = false
@@ -112,7 +202,7 @@ enabled = false
 
 [theme]
 builtin = "Ayu"
-community_palette = "Kemuri"
+community_palette = "Gruber Darker"
 mode = "dark"
 source = "wallpaper"
 wallpaper_scheme = "m3-tonal-spot"
@@ -125,13 +215,17 @@ wallpaper_scheme = "m3-tonal-spot"
 directory = "/home/daniel/Pictures/Wallpapers"
 
     [wallpaper.default]
-    path = "/home/daniel/Pictures/Wallpapers/buzlodja.jpg"
+    path = "/home/daniel/Pictures/Wallpapers/john-towner-JgOeRuGD_Y4-unsplash.jpg"
 
     [wallpaper.last]
-    path = "/home/daniel/Pictures/Wallpapers/buzlodja.jpg"
+    path = "/home/daniel/Pictures/Wallpapers/john-towner-JgOeRuGD_Y4-unsplash.jpg"
 
     [wallpaper.monitors.DP-1]
-    path = "/home/daniel/Pictures/Wallpapers/buzlodja.jpg"
+    path = "/home/daniel/Pictures/Wallpapers/john-towner-JgOeRuGD_Y4-unsplash.jpg"
+
+[widget.active_window]
+max_length = 300
+title_scroll = "on_hover"
 
 [widget.battery]
 enabled = false

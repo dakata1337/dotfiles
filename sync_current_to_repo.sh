@@ -25,4 +25,7 @@ done
 log "INFO" "Exporting noctalia config."
 noctalia config export > noctalia-config.toml
 
+log "INFO" "Copying wallpapers."
+cp ~/Pictures/Wallpapers/* ./Wallpapers
+
 log "INFO" "Sync complete!"
