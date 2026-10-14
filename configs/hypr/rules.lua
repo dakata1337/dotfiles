@@ -9,7 +9,7 @@ function float_center_rule(name, match, workspace)
     })
 end
 
-float_center_rule("supersonic-rule", { class = "Supersonic" }, "9")
+float_center_rule("supersonic-rule", { class = "io.github.supersonic-app.supersonic" }, "9")
 float_center_rule("python-float-center", { title = "hypr_py_child" })
 
 local kicad_floting_windows = { ".*Footprint Chooser.*", ".*3D Viewer.*"}

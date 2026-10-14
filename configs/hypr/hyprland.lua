@@ -11,7 +11,7 @@ local apps = {
 	fileManager = "dolphin",
 	menu        = "noctalia msg panel-toggle launcher",
 	browser     = "zen-browser",
-	music       = "supersonic",
+	music       = "supersonic-desktop",
 }
 
 hl.on("hyprland.start", function () 

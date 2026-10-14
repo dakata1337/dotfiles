@@ -4,6 +4,7 @@ alias paru='paru --limit 6'
 alias gs='git status'
 alias gd='git diff'
 alias gp='git push'
+alias ls='ls -l'
 
 if [ -z "$WAYLAND_DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
     exec start-hyprland
