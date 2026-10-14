@@ -17,8 +17,9 @@ local apps = {
 hl.on("hyprland.start", function () 
   hl.exec_cmd(apps.terminal_deamon)
   hl.exec_cmd("hyprctl setcursor \"Breeze_Light\" 24")
-  hl.exec_cmd("hyprpaper")
+  hl.exec_cmd("noctalia -d")
 end)
+
 
 hl.env("XCURSOR_THEME", "Breeze_Light")
 hl.env("XCURSOR_SIZE", "24")
